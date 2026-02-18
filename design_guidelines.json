@@ -1,0 +1,117 @@
+{
+  "identity": {
+    "name": "Cognitive Library",
+    "persona": "The Anti-AI Designer",
+    "vibe": "Swiss Editorial meets Digital Archive",
+    "description": "A knowledge assistant that feels like a high-end research library, not a chatbot. It prioritizes reading experience, citation clarity, and intellectual focus.",
+    "emotional_tone": "Calm, Authoritative, Tactile, Organized"
+  },
+  "typography": {
+    "font_family": {
+      "heading": "Libre Baskerville, serif",
+      "body": "Manrope, sans-serif",
+      "code": "JetBrains Mono, monospace"
+    },
+    "imports": [
+      "@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');"
+    ],
+    "scale": {
+      "h1": "text-4xl md:text-5xl font-bold tracking-tight leading-[1.1]",
+      "h2": "text-3xl md:text-4xl font-semibold tracking-tight",
+      "h3": "text-2xl font-medium tracking-normal",
+      "body_lg": "text-lg leading-relaxed",
+      "body": "text-base leading-relaxed text-stone-600",
+      "small": "text-sm font-medium tracking-wide uppercase text-stone-500",
+      "citation": "text-xs font-mono text-stone-400 bg-stone-100 px-1 py-0.5 rounded-sm"
+    }
+  },
+  "colors": {
+    "palette": {
+      "background": "#FAFAF9",
+      "foreground": "#1C1917",
+      "sidebar": "#121212",
+      "sidebar_foreground": "#A8A29E",
+      "primary": "#C2410C",
+      "primary_foreground": "#FFFFFF",
+      "secondary": "#E7E5E4",
+      "secondary_foreground": "#44403C",
+      "accent": "#F59E0B",
+      "border": "#E7E5E4",
+      "muted": "#F5F5F4",
+      "muted_foreground": "#78716C"
+    },
+    "semantic": {
+      "brand": "#C2410C",
+      "success": "#15803D",
+      "warning": "#B45309",
+      "error": "#B91C1C",
+      "info": "#0369A1"
+    }
+  },
+  "layout_strategy": {
+    "container": "max-w-[1600px] mx-auto p-4 md:p-8",
+    "sidebar_width": "w-72",
+    "chat_width": "max-w-3xl mx-auto",
+    "grid_bento": "grid grid-cols-1 md:grid-cols-4 gap-4",
+    "spacing": {
+      "section_gap": "gap-8 md:gap-12",
+      "item_gap": "gap-4"
+    }
+  },
+  "components": {
+    "button": {
+      "default": "rounded-none font-medium tracking-wide uppercase text-xs px-6 py-3 transition-all duration-200 active:scale-95",
+      "primary": "bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm",
+      "secondary": "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+      "ghost": "hover:bg-stone-100 text-stone-600 hover:text-stone-900"
+    },
+    "card": {
+      "style": "bg-white border border-stone-200 shadow-none rounded-none p-6 hover:border-stone-300 transition-colors",
+      "interactive": "cursor-pointer hover:shadow-sm hover:-translate-y-0.5 transition-all duration-300"
+    },
+    "input": {
+      "style": "rounded-none border-x-0 border-t-0 border-b-2 border-stone-200 bg-transparent px-0 py-2 focus:border-primary focus:ring-0 placeholder:text-stone-400 transition-colors"
+    },
+    "chat_bubble": {
+      "user": "bg-stone-100 text-stone-800 rounded-none rounded-tr-lg rounded-bl-lg p-4 max-w-[80%]",
+      "ai": "bg-transparent text-stone-900 border-l-2 border-primary pl-4 py-2 max-w-[90%]"
+    }
+  },
+  "visual_enhancers": {
+    "texture": "bg-[url('https://www.transparenttextures.com/patterns/clean-gray-paper.png')] bg-blend-multiply",
+    "shadows": "shadow-[0_1px_2px_0_rgba(0,0,0,0.05)]",
+    "borders": "border-stone-200"
+  },
+  "image_urls": {
+    "hero_abstract": "https://images.unsplash.com/photo-1771085223326-a5cb5110635b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTN8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwbGlicmFyeSUyMGFlc3RoZXRpYyUyMGFic3RyYWN0fGVufDB8fHx8MTc3MTM4ODc3NHww&ixlib=rb-4.1.0&q=85",
+    "empty_state_shelf": "https://images.unsplash.com/photo-1565099405664-dacc39198378?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTN8MHwxfHNlYXJjaHwzfHxtaW5pbWFsaXN0JTIwbGlicmFyeSUyMGFlc3RoZXRpYyUyMGFic3RyYWN0fGVufDB8fHx8MTc3MTM4ODc3NHww&ixlib=rb-4.1.0&q=85",
+    "knowledge_abstract": "https://images.pexels.com/photos/17785585/pexels-photo-17785585.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "icons": {
+    "library": "lucide-react",
+    "style": "stroke-1"
+  },
+  "instructions_to_main_agent": [
+    "Implement the 'Cognitive Library' theme: Think strict grids, serif headings, and generous whitespace.",
+    "Use the color palette strictly. Primary color #C2410C is for CTAs only.",
+    "Sidebar should be Dark (#121212) to create a focus tunnel for the main content.",
+    "Typography: Use Libre Baskerville for all H1-H3. Use Manrope for Body.",
+    "Component Shapes: Avoid rounded-lg or rounded-xl. Stick to rounded-none or rounded-sm (2px) for a professional, document-like feel.",
+    "Chat Interface: Make it look like a dialogue script, not an iMessage chat.",
+    "Citations: Display them as footnotes or distinct side-notes, not inline links."
+  ],
+  "universal_guidelines": [
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy",
+    "Use glass-morphism effects with backdrop filters (12-24px blur) for floating elements only",
+    "You MUST NOT apply universal transition. Eg: transition: all. This results in breaking transforms. Always add transitions for specific interactive elements like button, input excluding transforms",
+    "You MUST NOT center align the app container, ie do not add .App { text-align: center; } in the css file. This disrupts the human natural reading flow of text",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠 for icons.",
+    "Every interaction needs micro-animations - hover states, transitions. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations: separates good from extraordinary.",
+    "Toasts: Use sonner."
+  ]
+}
