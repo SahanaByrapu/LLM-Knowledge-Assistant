@@ -30,7 +30,7 @@ Build LLM Knowledge assistant using RAG and MCP
 - **Vector Store**: ChromaDB for document embeddings
 - **LLM**: OpenAI GPT-5.2 via emergentintegrations
 
-## What's Been Implemented (Jan 2026)
+## What's Been Implemented 
 - [x] Document upload endpoint with multi-format support
 - [x] Text extraction (PDF, DOCX, TXT, MD)
 - [x] Document chunking and ChromaDB storage
