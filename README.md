@@ -4,7 +4,7 @@
 Build LLM Knowledge assistant using RAG and MCP
 
 ## User Choices
-- **LLM Provider**: OpenAI GPT-5.2
+- **LLM Provider**: OpenAI GPT-4o
 - **Document Formats**: PDF, TXT, MD, DOCX
 - **Core Features**: Document upload & processing, Chat with context-aware responses, Conversation history, Source citations
 - **Authentication**: None (open access)
@@ -28,7 +28,7 @@ Build LLM Knowledge assistant using RAG and MCP
 - **Backend**: FastAPI with async endpoints
 - **Database**: MongoDB for conversations/messages/documents
 - **Vector Store**: ChromaDB for document embeddings
-- **LLM**: OpenAI GPT-5.2 via emergentintegrations
+- **LLM**: OpenAI GPT-4o via LangChain
 
 ## What's Been Implemented 
 - [x] Document upload endpoint with multi-format support
