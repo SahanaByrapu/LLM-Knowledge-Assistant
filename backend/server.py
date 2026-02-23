@@ -16,8 +16,9 @@ from pypdf import PdfReader
 from docx import Document as DocxDocument
 import io
 import tiktoken
-
-from emergentintegrations.llm.chat import LlmChat, UserMessage
+from langchain_openai import ChatOpenAI
+from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
+#from emergentintegrations.llm.chat import LlmChat, UserMessage
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -41,8 +42,8 @@ collection = chroma_client.get_or_create_collection(
 app = FastAPI()
 api_router = APIRouter(prefix="/api")
 
-# Emergent LLM Key
-EMERGENT_LLM_KEY = os.environ.get('EMERGENT_LLM_KEY')
+# OPENAI_API_KEY
+OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
 
 # Models
 class DocumentModel(BaseModel):
@@ -208,6 +209,8 @@ async def delete_document(doc_id: str):
     
     return {"message": "Document deleted"}
 
+
+
 # Conversation endpoints
 @api_router.post("/conversations", response_model=Conversation)
 async def create_conversation():
@@ -310,18 +313,29 @@ When answering questions:
 User question: {request.message}
 
 Please provide a helpful response based on the context above. If you reference information from the documents, mention which source it came from."""
-
+   #model="gpt-4.1-mini"
     try:
-        chat_instance = LlmChat(
-            api_key=EMERGENT_LLM_KEY,
-            session_id=request.conversation_id,
-            system_message=system_prompt
-        ).with_model("openai", "gpt-5.2")
-        
-        response_text = await chat_instance.send_message(UserMessage(text=user_prompt))
+        chat_instance = ChatOpenAI(
+        model="gpt-4.1-mini",   # or gpt-4.1
+        api_key=OPENAI_API_KEY,
+        temperature=0.7
+         )
+
+        messages = [
+        SystemMessage(content=system_prompt),
+        HumanMessage(content=user_prompt)
+         ]
+
+        response = await chat_instance.ainvoke(messages)
+        response_text = response.content
+
     except Exception as e:
         logging.error(f"Error calling LLM: {e}")
-        response_text = f"I apologize, but I encountered an error processing your request. Please try again. Error: {str(e)}"
+        response_text = (
+        "I apologize, but I encountered an error processing your request. "
+        f"Please try again. Error: {str(e)}"
+        )
+
     
     # Save assistant message
     assistant_message = Message(
